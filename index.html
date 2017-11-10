@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Document</title>
+</head>
+<body>
+	<h1>Hotel Name</h1>
+	<p id="hname"></p>
+	<h3>Total Rooms</h3>
+	<p id="trooms"></p>
+	<h3>Available Rooms</h3>
+	<p id="arooms"></p><button onclick="infoFunction()" type="button">Click for Info</button> 
+	<script>
+	    var hotel = { 
+	 name: 'Biltmore',
+	 rooms: 500,
+	 roomsBooked: 150,
+	 roomService: true,
+	 pool: false,
+	 
+	 roomsAvail: function() {
+	   return this.rooms - this.roomsBooked;
+	 }
+	}
+	function infoFunction() {
+	document.getElementById("hname").innerHTML = hotel.name;
+	document.getElementById("trooms").innerHTML = hotel.rooms;
+	document.getElementById("arooms").innerHTML = hotel.roomsAvail();
+
+	}
+	</script> 
+	<script src="objects.js" type="text/javascript">
+	</script>
+</body>
+</html>
