@@ -7,6 +7,9 @@ var hotel = {
   
   roomsAvail: function() {
     return this.rooms - this.roomsBooked;
+    
+    
+    
   }
     
     
