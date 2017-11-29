@@ -1,76 +1,93 @@
-   var cars = { 
-	 name: ["Economy", "Midsize"],
-	 economyCars: 125,
-	 economyCarsBooked: 0,
-	 midsizeCars: 100,
-	 midsizeCarsBooked: 0,
-	 
-	  ecarFunction: function() {
-	   return this.economyCars - this.economyCarsBooked;
-	  },
-	  
-	  midcarFunction: function() {
-	   return this.midsizeCars - this.midsizeCarsBooked;
-	  },
-	  
-	  bookEcon: function() {
-	      return this.economyCarsBooked++;
-	  },
-	  
-	  bookMid: function() {
-	      return this.midsizeCarsBooked++;
-	  }
-	  };
-	    
-	function availFunction() {
-	document.getElementById("ecars").innerHTML = cars.name[0];
-	document.getElementById("midcars").innerHTML = cars.name[1];
-	document.getElementById("ecarsAvail").innerHTML = cars.ecarFunction();
-	document.getElementById("midcarsAvail").innerHTML = cars.midcarFunction();
-	}
-	
-	function rentCar() {
-	cars.bookEcon();
-	document.getElementById("ecarsAvail").innerHTML = cars.ecarFunction();
+var cars = {
+    rentals: [
+        {
+            name: "Economy",
+            price:"99",
+            available: 3,
+            rented: 0,
+        },
+        {
+            name: "Midsize",
+            price:"149",
+            available: 2,
+            rented: 0,
+       }
+   ]
+   }
+  	var rentalName = {
+	 nameOfRenter: "",
+	 carType: ["", ""],
 	}
 
-    function rentMidcar(){
-    cars.bookMid();
-	document.getElementById("midcarsAvail").innerHTML = cars.midcarFunction();    
-    }
+// function getDetails() {
+//     var carsRent = document.getElementById("carsRent");
+//     var divprice = document.getElementById("divprice");
+//     var result = avail();	
 	
-// var carRental = {
-//     rental: [
-//         {
-//             name:
-//             type:
-//         }
-//         ]
-// },
-//         {
-//             name:
-//             type:
-//         }
-        
-// };
+//  divprice.innerHTML = carsRent.value;	
+// }
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+// function displayDetails(car)
+// {
+
+// function carOptions() {
+//     var x = document.getElementById("carType");
+//     var option = document.createElement("option");
+//     option.text = "Economy";
+document.getElementById("carOptions").onchange = function() {
+    var n = document.getElementById("carOptions").selectedIndex;
+    document.getElementById("carPrice").innerHTML = cars.rentals[n].price;
+    document.getElementById("carsAvail").innerHTML = cars.rentals[n].available;
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+for (var i = 0; i < cars.rentals.length; i++) {
+var selectCar = document.createElement("OPTION");
+   selectCar.setAttribute("type", "select");
+   selectCar.setAttribute("name", "vehType");
+   selectCar.setAttribute("value", i);
+   selectCar.setAttribute("id", "car" + i);
+  selectCar.setAttribute("onchange", "displayDetails(" + i + ")");
+   selectCar.innerHTML = cars.rentals[i].name;
+   document.getElementById("carOptions").appendChild(selectCar);
   }
-}
+
+
+
+
+	  //ecarFunction: function() {
+	  // return this.economyCars - this.economyCarsBooked;
+	  //},
+	  
+	  //midcarFunction: function() {
+	  // return this.midsizeCars - this.midsizeCarsBooked;
+	  //},
+	  
+	  //bookEcon: function() {
+	  //    return this.economyCarsBooked++;
+	  //},
+	  
+	  //bookMid: function() {
+	  //    return this.midsizeCarsBooked++;
+	  //}
+	  //};
+	    
+	// function availFunction() {
+	// document.getElementById("ecars").innerHTML = cars.name[0];
+	// document.getElementById("midcars").innerHTML = cars.name[1];
+	// document.getElementById("ecarsAvail").innerHTML = cars.ecarFunction();
+	// document.getElementById("midcarsAvail").innerHTML = cars.midcarFunction();
+	// }
+	
+	// function rentCar() {
+	// cars.bookEcon();
+	// document.getElementById("ecarsAvail").innerHTML = cars.ecarFunction();
+	// }
+
+ //   function rentMidcar(){
+ //   cars.bookMid();
+	// document.getElementById("midcarsAvail").innerHTML = cars.midcarFunction();    
+ //   }
+    
+
+
+	

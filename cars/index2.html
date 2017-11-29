@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+	<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 	<title>Document</title>
 </head>
 <body>
-	<h1>Business Name</h1>
-	<p>Enterprise Car Rentals</p>
-	<h3>Economy Cars</h3>
-	<p id="ecars"></p>
-	<h3>Economy Cars Available</h3>
-	<p id="ecarsAvail"></p>
-	<h3>Midsize Cars</h3>
-	<p id="midcars"></p>
-	<h3>Midsize Cars Available</h3>
-	<p id="midcarsAvail"></p>
-	
-	<form>
-    Full Name:<br>
-  <input type="text" value="Enter Name Here" name="firstname"><br>
-	   
-	</form>
-	 <div class="dropdown">
-     Vehicle Type:
-<button onclick="myFunction()" class="dropbtn">Select</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#ecars">Economy Car</a>
-    <a href="#midcars">Mid-size Car</a>
-  </div>
-</div><br>
-	
-	<button onclick="availFunction()" type="button">Update Availability</button>
-	<button onclick="rentCar()" type="button">Rent 1 Economy Car</button>
-	<button onclick="rentMidcar()" type="button">Rent 1 Midsize Car</button>
-	
-	<script>
+	<h1>Enterprise Car Rentals</h1><!--<h3>Economy Cars</h3>-->
+	<!--<p id="ecars"></p>-->
+	<!--<h3>Economy Cars Available</h3>-->
+	<!--<p id="ecarsAvail"></p>-->
+	<!--<h3>Midsize Cars</h3>-->
+	<!--<p id="midcars"></p>-->
+	<!--<h3>Midsize Cars Available</h3>-->
+	<!--<p id="midcarsAvail"></p><br>-->
+	<h3>Rent a Vehicle</h3>
+	<h2></h2>
+	<form id="carForm">
+		<label>Full Name: </label>
+		<form action="/action_page.php" id="renterInfo" method="post">
+			<input name="fname" required="" type="text">
+			<div id="radialSection"><br>
+				<label>Vehicle Type:</label>
+				<select id="carOptions" onchange="displayDetails()">
+					<option value=""></option>
+					
+				</select>
+				</div>
+  <!--<option>Choose Vehicle Type</option>-->
+  <!--<option>Economy</option>-->
+  <!--<option>Midsize</option>-->
 
-	</script> 
-	<script src="objects1.js">
-	</script>
+			<div id="carInfo">
+				<h3>Vehicle Information</h3>
+				<p>Available: <span id="carsAvail" ></span></p>
+                <p>Price: <span id="carPrice"></span></p>
+                <input onsubmit="return rent()" type="submit" value="Submit!">
+			</div><span></span>
+		</form>
+		
+		<!--< onclick="availFunction()" type="button">Update Availabilitybutton</button>-->
+		<!--<button onclick="rentCar()" type="button">Rent 1 Economy Car</button>-->
+		<!--<button onclick="rentMidcar()" type="button">Rent 1 Midsize Car</button>-->
+		<span>
+		<script>
+
+		</script> 
+		<script src="objects1.js">
+		</script></span>
+	</form>
 </body>
 </html>
