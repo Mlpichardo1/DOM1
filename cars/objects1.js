@@ -46,7 +46,7 @@ var selectCar = document.createElement("OPTION");
    selectCar.setAttribute("name", "vehType");
    selectCar.setAttribute("value", i);
    selectCar.setAttribute("id", "car" + i);
-  selectCar.setAttribute("onchange", "displayDetails(" + i + ")");
+   selectCar.setAttribute("onclick", "displayDetails(" + i + ")");
    selectCar.innerHTML = cars.rentals[i].name;
    document.getElementById("carOptions").appendChild(selectCar);
   }
