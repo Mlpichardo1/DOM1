@@ -52,8 +52,6 @@ var selectCar = document.createElement("OPTION");
   }
 
 
-
-
 	  //ecarFunction: function() {
 	  // return this.economyCars - this.economyCarsBooked;
 	  //},
